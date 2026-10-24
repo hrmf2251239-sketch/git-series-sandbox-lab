@@ -1,6 +1,8 @@
 // utils/logger.js — small structured logger used as the target file
 // for the interactive-rebase challenge
 
+// GG frickin EZ!!!
+
 function createLogEntry(level, message) {
   return {
     level,
@@ -27,4 +29,10 @@ function logError(message) {
   return entry;
 }
 
-export { createLogEntry, logInfo, logWarn, logError };
+function logDebug(message) {
+  const entry = createLogEntry("ERROR", message);
+  console.error(`[${entry.timestamp}] DEBUG: ${entry.message}`);
+  return entry;
+}
+
+export { createLogEntry, logInfo, logWarn, logError,logDebug };
